@@ -9,5 +9,6 @@ namespace Common
     public class Class1
     {
         ksnsdnsjdnkjsdsnkndjdjkj
+            proba2
     }
 }
