@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Common
 {
-    interface IDataBaseManagement
+    [ServiceContract]
+    public interface IDataBaseManagement
     {
+        [OperationContract]
+        void Ispisi(string s);
     }
 }
