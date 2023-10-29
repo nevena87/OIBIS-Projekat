@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{B402EF10-B00D-431A-9D94-93A52CD2171D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupService", "..\BackupService\BackupService.csproj", "{39ADA1A0-47F9-4FF2-AA2C-84D2E730EBD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B402EF10-B00D-431A-9D94-93A52CD2171D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B402EF10-B00D-431A-9D94-93A52CD2171D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B402EF10-B00D-431A-9D94-93A52CD2171D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39ADA1A0-47F9-4FF2-AA2C-84D2E730EBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39ADA1A0-47F9-4FF2-AA2C-84D2E730EBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39ADA1A0-47F9-4FF2-AA2C-84D2E730EBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39ADA1A0-47F9-4FF2-AA2C-84D2E730EBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
