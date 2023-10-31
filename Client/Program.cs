@@ -1,7 +1,9 @@
 ﻿using Common;
+using Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +14,24 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            string address = "net.tcp://localhost:4001/IDataBaseManagement";
+            string name = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+            Console.WriteLine(name);
+
             NetTcpBinding binding = new NetTcpBinding();
+            string address = "net.tcp://localhost:4001/DataBaseService";
 
-            ChannelFactory<IDataBaseManagement> channel = new ChannelFactory<IDataBaseManagement>(binding, address);
-            IDataBaseManagement proxy = channel.CreateChannel();
+            binding.Security.Mode = SecurityMode.Transport;
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
+            binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-            string message = "Ovo je poruka sa klijenta.";
-            proxy.Ispisi(message); 
+            Console.WriteLine("Korisnik koji je pokrenuo klijenta je: " + WindowsIdentity.GetCurrent().Name);
 
-            Console.WriteLine("Poruka poslata na server: " + message);
+            using (ClientProxy proxy = new ClientProxy(binding, new EndpointAddress(new Uri(address))))
+            {
+                proxy.Ispisi("Poruka poslata sa klijenta.");
+            }
 
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
