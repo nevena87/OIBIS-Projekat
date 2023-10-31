@@ -1,8 +1,9 @@
-﻿using Common;
+﻿using CertificateManager;
+using Common;
+using Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.ServiceModel;
@@ -16,9 +17,9 @@ namespace Zadatak26
     {
         static void Main(string[] args)
         {
-           // string name = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+            string name = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
             //string name = "wcfservice";
-       //     Console.WriteLine(name);
+            Console.WriteLine(name);
 
             NetTcpBinding bindingClient = new NetTcpBinding();
             string addressClient = "net.tcp://localhost:4001/DataBaseService";
@@ -42,12 +43,12 @@ namespace Zadatak26
             bindingBackup.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
 
             ServiceHost hostBackup = new ServiceHost(typeof(DataBaseService));
-          //  hostBackup.AddServiceEndpoint(typeof(IBackupService), bindingBackup, addressBackup);
+            hostBackup.AddServiceEndpoint(typeof(IBackupService), bindingBackup, addressBackup);
 
             hostBackup.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
             hostBackup.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
 
-          //  hostBackup.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, name);
+            hostBackup.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, name);
 
             hostBackup.Open();
 
