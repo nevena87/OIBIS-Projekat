@@ -1,0 +1,2 @@
+C:\Users\Nevena\OneDrive\Radna površina\oib\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\oib\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.CoreCompileInputs.cache
