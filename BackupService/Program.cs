@@ -14,7 +14,7 @@ namespace BackupService
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "Nevena";
+            string srvCertCN = "wcfservice";
 
             NetTcpBinding binding = new NetTcpBinding();
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
