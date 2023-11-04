@@ -14,7 +14,7 @@ namespace BackupService
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "wcfservice";
+            string srvCertCN = "Nevena";
 
             NetTcpBinding binding = new NetTcpBinding();
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
@@ -25,10 +25,13 @@ namespace BackupService
 
             using (Backup proxy = new Backup(binding, address))
             {
-                while (true)
+                /*while (true)
                 {
-                    Thread.Sleep(30000);
-                }
+                    
+                    //Thread.Sleep(30000);
+                }*/
+                Console.WriteLine("Backup service je pokrenut.");
+                Console.ReadLine();
             }
         }
     }

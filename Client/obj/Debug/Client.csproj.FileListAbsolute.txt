@@ -30,3 +30,5 @@ C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\Client\obj\Debug\Client.exe
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\Client\obj\Debug\Client.pdb
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\Client\bin\Debug\Manager.dll
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\Client\bin\Debug\Manager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\oib\OIBIS-projekat\Client\bin\Debug\Manager.dll
+C:\Users\Nevena\OneDrive\Radna površina\oib\OIBIS-projekat\Client\bin\Debug\Manager.pdb
