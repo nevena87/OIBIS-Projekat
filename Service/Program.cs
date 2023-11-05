@@ -60,6 +60,6 @@ namespace Zadatak26
 
             hostClient.Close();
         }
-        }
     }
+}
 
