@@ -123,6 +123,7 @@ namespace Client
         {
             try
             {
+                //za ispis
                 factory.Ispisi(s);
             }
             catch (Exception e)
