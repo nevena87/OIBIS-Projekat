@@ -7,7 +7,7 @@ using Common;
 
 namespace Zadatak26
 {
-    class DataBaseService : IDataBaseManagement, IBackupService
+    public class DataBaseService : IDataBaseManagement, IBackupService
     {
         public void AddEntry(DataBaseEntry entry)
         {

@@ -32,5 +32,26 @@ namespace Common
         public string City { get => city; set => city = value; }
         public string Year { get => year; set => year = value; }
         public double[] Consumption { get => consumption; set => consumption = value; }
+
+        public override bool Equals(object obj)
+        {
+            var entry = obj as DataBaseEntry;
+            return entry != null &&
+                   Id == entry.Id &&
+                   Region == entry.Region &&
+                   City == entry.City &&
+                   Year == entry.Year &&
+                   EqualityComparer<double[]>.Default.Equals(Consumption, entry.Consumption);
+        }
+
+        public double GetYearlyConsumption()
+        {
+            double sum = 0;
+            for (int i = 0; i < 12; i++)
+            {
+                sum += Consumption[i];
+            }
+            return sum;
+        }
     }
 }
