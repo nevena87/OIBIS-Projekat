@@ -35,9 +35,6 @@ namespace BackupService
                     entryList = proxy.PullDatabase();
                     SaveDatabase(entryList);
                 }
-
-                Console.WriteLine("Backup service je pokrenut.");
-                Console.ReadLine();
             }
         }
 
