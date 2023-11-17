@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using System.IO;
+using System.Xml.Serialization;
+using Manager;
+using System.Threading;
 
 namespace Zadatak26
 {
     public class DataBaseService : IDataBaseManagement, IBackupService
     {
+        private string databasePath = @"..\..\Database.xml";
         public void AddEntry(DataBaseEntry entry)
         {
             throw new NotImplementedException();
@@ -31,7 +36,23 @@ namespace Zadatak26
 
         public void CreateDatabase()
         {
-            throw new NotImplementedException();
+            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
+            string userName = Formatter.ParseName(principal.Identity.Name);
+
+            if (Thread.CurrentPrincipal.IsInRole("Administrate"))
+            {
+                if (!File.Exists(databasePath))
+                {
+                    using (var stream = File.Create(databasePath))
+                    {
+                        Console.WriteLine("Database created.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Failed to create a Database. Database already exists.");
+                }
+            }
         }
 
         public void DeleteDatabase()
