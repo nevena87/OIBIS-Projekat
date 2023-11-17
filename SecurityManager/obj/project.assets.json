@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\OIB\\OIBIS-projekat\\SecurityManager\\SecurityManager.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\oibceo\\OIBIS-projekat\\SecurityManager\\SecurityManager.csproj",
       "projectName": "SecurityManager",
-      "projectPath": "C:\\Users\\Lenovo\\Desktop\\OIB\\OIBIS-projekat\\SecurityManager\\SecurityManager.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\Desktop\\oibceo\\OIBIS-projekat\\SecurityManager\\SecurityManager.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Desktop\\OIB\\OIBIS-projekat\\SecurityManager\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\Desktop\\oibceo\\OIBIS-projekat\\SecurityManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
