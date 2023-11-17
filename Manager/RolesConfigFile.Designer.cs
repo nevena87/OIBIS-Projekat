@@ -59,5 +59,32 @@ namespace Manager {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write,Read,Administrate.
+        /// </summary>
+        internal static string admin {
+            get {
+                return ResourceManager.GetString("admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read.
+        /// </summary>
+        internal static string reader {
+            get {
+                return ResourceManager.GetString("reader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write.
+        /// </summary>
+        internal static string writer {
+            get {
+                return ResourceManager.GetString("writer", resourceCulture);
+            }
+        }
     }
 }

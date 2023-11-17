@@ -17,39 +17,106 @@ namespace Client
             factory = this.CreateChannel();
         }
 
-        public void AddEntry(DataBaseEntry entry)
+        public void CreateDatabase()
         {
-            throw new NotImplementedException();
+            try
+            {
+                factory.CreateDatabase();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
         }
 
         public void ArchiveDatabase()
         {
-            throw new NotImplementedException();
-        }
-
-        public double AvgCityConsumption(string city)
-        {
-            throw new NotImplementedException();
-        }
-
-        public double AvgRegionConsumption(string region)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CreateDatabase()
-        {
-            throw new NotImplementedException();
+            try
+            {
+                factory.ArchiveDatabase();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
         }
 
         public void DeleteDatabase()
         {
-            throw new NotImplementedException();
+            try
+            {
+                factory.DeleteDatabase();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+        }
+
+        public void AddEntry(DataBaseEntry entry)
+        {
+            try
+            {
+                factory.AddEntry(entry);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+        }
+
+        public void ModifyEntry(DataBaseEntry entry)
+        {
+            try
+            {
+                factory.ModifyEntry(entry);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+        }
+
+        public double AvgCityConsumption(string city)
+        {
+            double res = -1;
+            try
+            {
+                res = factory.AvgCityConsumption(city);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+            return res;
+        }
+
+        public double AvgRegionConsumption(string region)
+        {
+            double res = -1;
+            try
+            {
+                res = factory.AvgRegionConsumption(region);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+            return res;
         }
 
         public DataBaseEntry HighestRegionConsumer(string region)
         {
-            throw new NotImplementedException();
+            DataBaseEntry res = null;
+            try
+            {
+                res = factory.HighestRegionConsumer(region);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+            return res;
         }
 
         public void Ispisi(string s)
@@ -62,11 +129,6 @@ namespace Client
             {
                 Console.WriteLine("Error: {0}", e.Message);
             }
-        }
-
-        public void ModifyEntry(DataBaseEntry entry)
-        {
-            throw new NotImplementedException();
         }
     }
 }
