@@ -1,12 +1,15 @@
 ﻿using CertificateManager;
+using Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace BackupService
 {
@@ -25,13 +28,28 @@ namespace BackupService
 
             using (Backup proxy = new Backup(binding, address))
             {
-                /*while (true)
+                List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+                while (true)
                 {
-                    
-                    //Thread.Sleep(30000);
-                }*/
+                    Thread.Sleep(30000);
+                    entryList = proxy.PullDatabase();
+                    SaveDatabase(entryList);
+                }
+
                 Console.WriteLine("Backup service je pokrenut.");
                 Console.ReadLine();
+            }
+        }
+
+        private static void SaveDatabase(List<DataBaseEntry> entryList)
+        {
+            string databasePath = @"..\..\BackupDatabase.xml";
+            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+
+            using (var stream = File.Create(databasePath))
+            {
+                serializer.Serialize(stream, entryList);
+                Console.WriteLine("Backup saved.");
             }
         }
     }
