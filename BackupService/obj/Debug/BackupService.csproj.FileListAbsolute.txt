@@ -34,3 +34,15 @@ C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\BackupService\obj\Debug\BackupSer
 C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CopyComplete
 C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\BackupService\obj\Debug\BackupService.exe
 C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\BackupService\obj\Debug\BackupService.pdb
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\BackupService.exe.config
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\BackupService.exe
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\BackupService.pdb
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\Common.dll
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\Manager.dll
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\Common.pdb
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\bin\Debug\Manager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CopyComplete
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\obj\Debug\BackupService.exe
+C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\BackupService\obj\Debug\BackupService.pdb

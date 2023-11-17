@@ -3,10 +3,12 @@ using Common;
 using Manager;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Policy;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,15 @@ namespace Zadatak26
 
             ServiceHost hostClient = new ServiceHost(typeof(DataBaseService));
             hostClient.AddServiceEndpoint(typeof(IDataBaseManagement), bindingClient, addressClient);
+
+            //Defining CustomAuthorizationManager as the preffered one.
+            hostClient.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
+
+            //Defining our principal settings.
+            hostClient.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
+            List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>();
+            policies.Add(new CustomAuthorizationPolicy());
+            hostClient.Authorization.ExternalAuthorizationPolicies = policies.AsReadOnly();
 
             hostClient.Open();
 

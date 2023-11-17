@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupService", "..\BackupS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "..\Manager\Manager.csproj", "{438E86C5-D767-4E28-A05A-474613B4F498}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurityManager", "..\SecurityManager\SecurityManager.csproj", "{EE222FF1-6E91-493F-98B1-D7C61E064401}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{438E86C5-D767-4E28-A05A-474613B4F498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{438E86C5-D767-4E28-A05A-474613B4F498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{438E86C5-D767-4E28-A05A-474613B4F498}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE222FF1-6E91-493F-98B1-D7C61E064401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE222FF1-6E91-493F-98B1-D7C61E064401}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE222FF1-6E91-493F-98B1-D7C61E064401}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE222FF1-6E91-493F-98B1-D7C61E064401}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
