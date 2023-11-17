@@ -28,3 +28,9 @@ C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Common\obj\
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Common\obj\Debug\Common.dll
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Common\obj\Debug\Common.pdb
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\bin\Debug\Common.dll
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\bin\Debug\Common.pdb
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\obj\Debug\Common.dll
+C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Common\obj\Debug\Common.pdb
