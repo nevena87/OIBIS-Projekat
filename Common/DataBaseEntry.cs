@@ -33,16 +33,16 @@ namespace Common
         public string Year { get => year; set => year = value; }
         public double[] Consumption { get => consumption; set => consumption = value; }
 
-        public override bool Equals(object obj)
-        {
-            var entry = obj as DataBaseEntry;
-            return entry != null &&
-                   Id == entry.Id &&
-                   Region == entry.Region &&
-                   City == entry.City &&
-                   Year == entry.Year &&
-                   EqualityComparer<double[]>.Default.Equals(Consumption, entry.Consumption);
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    var entry = obj as DataBaseEntry;
+        //    return entry != null &&
+        //           Id == entry.Id &&
+        //           Region == entry.Region &&
+        //           City == entry.City &&
+        //           Year == entry.Year &&
+        //           EqualityComparer<double[]>.Default.Equals(Consumption, entry.Consumption);
+        //}
 
         public double GetYearlyConsumption()
         {

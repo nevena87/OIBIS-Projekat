@@ -6,3 +6,15 @@ C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.AssemblyInfo.cs
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\OIB\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.RolesConfigFile.resources
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\bin\Debug\netcoreapp3.1\SecurityManager.deps.json
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\bin\Debug\netcoreapp3.1\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\bin\Debug\netcoreapp3.1\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.RolesConfigFile.resources
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oibsiss\OIBIS-projekat\SecurityManager\obj\Debug\netcoreapp3.1\SecurityManager.pdb
