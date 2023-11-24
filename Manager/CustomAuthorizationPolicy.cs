@@ -38,8 +38,6 @@ namespace Manager
                 return false;
             }
 
-            WindowsIdentity windowsIdentity = identities[0] as WindowsIdentity;
-
             evaluationContext.Properties["Principal"] =
                 new CustomPrincipal((WindowsIdentity)identities[0]);
             return true;

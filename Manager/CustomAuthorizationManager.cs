@@ -15,7 +15,6 @@ namespace Manager
                  AuthorizationContext.Properties["Principal"] as CustomPrincipal;
             bool retValue = principal.IsInRole("Read");
 
-
             return retValue;
         }
     }

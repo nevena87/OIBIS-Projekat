@@ -21,7 +21,6 @@ namespace Manager
                 return true;
             }
             return false;
-
         }
     }
 }
