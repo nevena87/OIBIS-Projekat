@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-   public class DataBaseEntry
+    public class DataBaseEntry
     {
         private int id;
         private string region;

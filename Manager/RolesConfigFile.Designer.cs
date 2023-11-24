@@ -61,7 +61,7 @@ namespace Manager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read,Write,Create,Archive,Delete.
+        ///   Looks up a localized string similar to Write,Read,Create.
         /// </summary>
         internal static string AllCommands {
             get {
@@ -79,7 +79,7 @@ namespace Manager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read,Write,Modify.
+        ///   Looks up a localized string similar to Write,Modify.
         /// </summary>
         internal static string Writers {
             get {

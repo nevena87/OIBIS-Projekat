@@ -118,5 +118,18 @@ namespace Client
             }
             return res;
         }
+
+        public void Ispisi(string s)
+        {
+            try
+            {
+                //za ispis
+                factory.Ispisi(s);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+        }
     }
 }

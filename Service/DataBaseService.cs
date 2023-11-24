@@ -15,12 +15,178 @@ namespace Zadatak26
     public class DataBaseService : IDataBaseManagement, IBackupService
     {
         private string databasePath = @"..\..\Database.xml";
+        public void AddEntry(DataBaseEntry entry)
+        {
+            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
+            string userName = Formatter.ParseName(principal.Identity.Name);
+
+            if (Thread.CurrentPrincipal.IsInRole("Write"))
+            {
+                if (File.Exists(databasePath))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+                    List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+
+                    using (FileStream stream = File.OpenRead(databasePath))
+                    {
+                        try
+                        {
+                            entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
+                        }
+                        catch (Exception e)
+                        {
+                            //Avoiding the empty database exception.
+                        }
+                    }
+                    entry.Id = entryList.Count;
+                    entryList.Add(entry);
+                    using (var stream = File.Create(databasePath))
+                    {
+                        serializer.Serialize(stream, entryList);
+                        Console.WriteLine("Entry added to database");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
+                }
+            }
+        }
+
+        public void ArchiveDatabase()
+        {
+            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
+            string userName = Formatter.ParseName(principal.Identity.Name);
+
+            if (Thread.CurrentPrincipal.IsInRole("Administrate"))
+            {
+                if (File.Exists(databasePath))
+                {
+                    string path = @"..\..\ArchivedDatabases";
+                    string[] filePaths = Directory.GetFiles(path);
+                    int numFiles = filePaths.Length;
+                    numFiles += 1;
+                    string filename = @"\ArchivedDatabase" + numFiles + ".xml";
+                    string archivedDatabasePath = path + filename;
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+                    List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+
+                    using (FileStream stream = File.OpenRead(databasePath))
+                    {
+                        try
+                        {
+                            entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
+                        }
+                        catch (Exception e)
+                        {
+                            //Avoiding the empty database exception.
+                        }
+                    }
+                    using (var stream = File.Create(archivedDatabasePath))
+                    {
+                        serializer.Serialize(stream, entryList);
+                        File.Delete(databasePath);
+                        Console.WriteLine("Database archived.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Cannot archive the Database. Database doesn't exist.");
+                }
+            }
+        }
+
+        public double AvgCityConsumption(string city)
+        {
+            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
+            string userName = Formatter.ParseName(principal.Identity.Name);
+
+            if (Thread.CurrentPrincipal.IsInRole("Read"))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+                List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+
+                using (FileStream stream = File.OpenRead(databasePath))
+                {
+                    try
+                    {
+                        entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
+                    }
+                    catch (Exception e)
+                    {
+                        //Avoiding the empty database exception.
+                    }
+                }
+                double res = 0;
+                int cnt = 0;
+                foreach (DataBaseEntry entry in entryList)
+                {
+                    if (entry.City.Equals(city))
+                    {
+                        res += entry.GetYearlyConsumption();
+                        cnt++;
+                    }
+                }
+                if (res == 0)
+                {
+                    Console.WriteLine("There are no such Cities in the Database.");
+                    return -1;
+                }
+                return (res / cnt);
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
+        public double AvgRegionConsumption(string region)
+        {
+            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
+            string userName = Formatter.ParseName(principal.Identity.Name);
+
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+            List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+
+            using (FileStream stream = File.OpenRead(databasePath))
+            {
+                try
+                {
+                    entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
+                }
+                catch (Exception e)
+                {
+                    //Avoiding the empty database exception.
+                }
+            }
+            double res = 0;
+            int cnt = 0;
+            foreach (DataBaseEntry entry in entryList)
+            {
+                if (entry.Region.Equals(region))
+                {
+                    res += entry.GetYearlyConsumption();
+                    cnt++;
+                }
+            }
+            if (res == 0)
+            {
+                Console.WriteLine("There are no such Regions in the Database.");
+                return -1;
+            }
+            return (res / cnt);
+
+        }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Create")]
         public void CreateDatabase()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
+
 
             if (!File.Exists(databasePath))
             {
@@ -33,55 +199,15 @@ namespace Zadatak26
             {
                 Console.WriteLine("Failed to create a Database. Database already exists.");
             }
+
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Archive")]
-        public void ArchiveDatabase()
-        {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
-
-            if (File.Exists(databasePath))
-            {
-                string path = @"..\..\ArchivedDatabases";
-                string[] filePaths = Directory.GetFiles(path);
-                int numFiles = filePaths.Length;
-                numFiles += 1;
-                string filename = @"\ArchivedDatabase" + numFiles + ".xml";
-                string archivedDatabasePath = path + filename;
-
-                XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
-                List<DataBaseEntry> entryList = new List<DataBaseEntry>();
-
-                using (FileStream stream = File.OpenRead(databasePath))
-                {
-                    try
-                    {
-                        entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
-                    }
-                    catch (Exception e)
-                    {
-                        //Avoiding the empty database exception.
-                    }
-                }
-                using (var stream = File.Create(archivedDatabasePath))
-                {
-                    serializer.Serialize(stream, entryList);
-                    File.Delete(databasePath);
-                    Console.WriteLine("Database archived.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Cannot archive the Database. Database doesn't exist.");
-            }
-        }
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Delete")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "Create")]
         public void DeleteDatabase()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
+
 
             if (File.Exists(databasePath))
             {
@@ -92,42 +218,52 @@ namespace Zadatak26
             {
                 Console.WriteLine("Cannot delete the Database. It doesn't exist!");
             }
+
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Write")]
-        public void AddEntry(DataBaseEntry entry)
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
+        public DataBaseEntry HighestRegionConsumer(string region)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (File.Exists(databasePath))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
-                List<DataBaseEntry> entryList = new List<DataBaseEntry>();
 
-                using (FileStream stream = File.OpenRead(databasePath))
-                {
-                    try
-                    {
-                        entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
-                    }
-                    catch (Exception e)
-                    {
-                        //Avoiding the empty database exception.
-                    }
-                }
-                entry.Id = entryList.Count;
-                entryList.Add(entry);
-                using (var stream = File.Create(databasePath))
-                {
-                    serializer.Serialize(stream, entryList);
-                    Console.WriteLine("Entry added to database");
-                }
-            }
-            else
+            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+            List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+            DataBaseEntry highestConsumer = null;
+
+            using (FileStream stream = File.OpenRead(databasePath))
             {
-                Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
+                try
+                {
+                    entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
+                }
+                catch (Exception e)
+                {
+                    //Avoiding the empty database exception.
+                }
             }
+            double max = 0;
+            foreach (DataBaseEntry entry in entryList)
+            {
+                if ((entry.Region.Equals(region)) && (entry.GetYearlyConsumption() > max))
+                {
+                    max = entry.GetYearlyConsumption();
+                    highestConsumer = entry;
+                }
+            }
+            if (highestConsumer == null)
+            {
+                Console.WriteLine("There are no Consumers in that region.");
+            }
+            return highestConsumer;
+
+        }
+
+        public void Ispisi(string s)
+        {
+            Console.WriteLine("Primljena poruka: " + s);
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Modify")]
@@ -135,6 +271,7 @@ namespace Zadatak26
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
+
 
             if (File.Exists(databasePath))
             {
@@ -187,119 +324,7 @@ namespace Zadatak26
             {
                 Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
             }
-        }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
-        public double AvgCityConsumption(string city)
-        {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
-
-            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
-            List<DataBaseEntry> entryList = new List<DataBaseEntry>();
-
-            using (FileStream stream = File.OpenRead(databasePath))
-            {
-                try
-                {
-                    entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
-                }
-                catch (Exception e)
-                {
-                    //Avoiding the empty database exception.
-                }
-            }
-            double res = 0;
-            int cnt = 0;
-            foreach (DataBaseEntry entry in entryList)
-            {
-                if (entry.City.Equals(city))
-                {
-                    res += entry.GetYearlyConsumption();
-                    cnt++;
-                }
-            }
-            if (res == 0)
-            {
-                Console.WriteLine("There are no such Cities in the Database.");
-                return -1;
-            }
-            return (res / cnt);
-        }
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
-        public double AvgRegionConsumption(string region)
-        {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
-
-            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
-            List<DataBaseEntry> entryList = new List<DataBaseEntry>();
-
-            using (FileStream stream = File.OpenRead(databasePath))
-            {
-                try
-                {
-                    entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
-                }
-                catch (Exception e)
-                {
-                    //Avoiding the empty database exception.
-                }
-            }
-            double res = 0;
-            int cnt = 0;
-            foreach (DataBaseEntry entry in entryList)
-            {
-                if (entry.Region.Equals(region))
-                {
-                    res += entry.GetYearlyConsumption();
-                    cnt++;
-                }
-            }
-            if (res == 0)
-            {
-                Console.WriteLine("There are no such Regions in the Database.");
-                return -1;
-            }
-            return (res / cnt);
-        }
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
-        public DataBaseEntry HighestRegionConsumer(string region)
-        {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
-
-            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
-            List<DataBaseEntry> entryList = new List<DataBaseEntry>();
-            DataBaseEntry highestConsumer = null;
-
-            using (FileStream stream = File.OpenRead(databasePath))
-            {
-                try
-                {
-                    entryList = (List<DataBaseEntry>)serializer.Deserialize(stream);
-                }
-                catch (Exception e)
-                {
-                    //Avoiding the empty database exception.
-                }
-            }
-            double max = 0;
-            foreach (DataBaseEntry entry in entryList)
-            {
-                if ((entry.Region.Equals(region)) && (entry.GetYearlyConsumption() > max))
-                {
-                    max = entry.GetYearlyConsumption();
-                    highestConsumer = entry;
-                }
-            }
-            if (highestConsumer == null)
-            {
-                Console.WriteLine("There are no Consumers in that region.");
-            }
-            return highestConsumer;   
         }
 
         public List<DataBaseEntry> PullDatabase()
