@@ -32,3 +32,11 @@ C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.Gener
 C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Manager\obj\Debug\Manager.dll
 C:\Users\Lenovo\Desktop\oo\OIBIS-projekat\Manager\obj\Debug\Manager.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\bin\Debug\Manager.dll
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\bin\Debug\Manager.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.RolesConfigFile.resources
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.dll
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Manager\obj\Debug\Manager.pdb

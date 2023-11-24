@@ -56,3 +56,15 @@ C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Service\obj
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Service\obj\Debug\Zadatak26.exe
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Service\obj\Debug\Zadatak26.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe.config
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Zadatak26.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Common.dll
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Manager.dll
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Common.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\bin\Debug\Manager.pdb
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\obj\Debug\Zadatak26.exe
+C:\Users\Lenovo\Desktop\oibb\OIBIS-projekat\Service\obj\Debug\Zadatak26.pdb

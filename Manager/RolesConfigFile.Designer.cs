@@ -61,29 +61,29 @@ namespace Manager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write,Read,Administrate.
+        ///   Looks up a localized string similar to Write,Read,Create.
         /// </summary>
-        internal static string admin {
+        internal static string AllCommands {
             get {
-                return ResourceManager.GetString("admin", resourceCulture);
+                return ResourceManager.GetString("AllCommands", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
-        internal static string reader {
+        internal static string Readers {
             get {
-                return ResourceManager.GetString("reader", resourceCulture);
+                return ResourceManager.GetString("Readers", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write.
+        ///   Looks up a localized string similar to Write,Modify.
         /// </summary>
-        internal static string writer {
+        internal static string Writers {
             get {
-                return ResourceManager.GetString("writer", resourceCulture);
+                return ResourceManager.GetString("Writers", resourceCulture);
             }
         }
     }

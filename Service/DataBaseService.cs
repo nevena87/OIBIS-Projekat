@@ -8,6 +8,7 @@ using System.IO;
 using System.Xml.Serialization;
 using Manager;
 using System.Threading;
+using System.Security.Permissions;
 
 namespace Zadatak26
 {
@@ -140,13 +141,13 @@ namespace Zadatak26
             }
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
         public double AvgRegionConsumption(string region)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (Thread.CurrentPrincipal.IsInRole("Read"))
-            {
+           
                 XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
                 List<DataBaseEntry> entryList = new List<DataBaseEntry>();
 
@@ -177,20 +178,16 @@ namespace Zadatak26
                     return -1;
                 }
                 return (res / cnt);
-            }
-            else
-            {
-                return -1;
-            }
+           
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Create")]
         public void CreateDatabase()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (Thread.CurrentPrincipal.IsInRole("Administrate"))
-            {
+            
                 if (!File.Exists(databasePath))
                 {
                     using (var stream = File.Create(databasePath))
@@ -202,16 +199,16 @@ namespace Zadatak26
                 {
                     Console.WriteLine("Failed to create a Database. Database already exists.");
                 }
-            }
+            
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Create")]
         public void DeleteDatabase()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (Thread.CurrentPrincipal.IsInRole("Administrate"))
-            {
+          
                 if (File.Exists(databasePath))
                 {
                     File.Delete(databasePath);
@@ -221,16 +218,17 @@ namespace Zadatak26
                 {
                     Console.WriteLine("Cannot delete the Database. It doesn't exist!");
                 }
-            }
+            
         }
 
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
         public DataBaseEntry HighestRegionConsumer(string region)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (Thread.CurrentPrincipal.IsInRole("Read"))
-            {
+            
                 XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
                 List<DataBaseEntry> entryList = new List<DataBaseEntry>();
                 DataBaseEntry highestConsumer = null;
@@ -260,11 +258,7 @@ namespace Zadatak26
                     Console.WriteLine("There are no Consumers in that region.");
                 }
                 return highestConsumer;
-            }
-            else
-            {
-                return null;
-            }
+            
         }
 
         public void Ispisi(string s)
@@ -272,13 +266,13 @@ namespace Zadatak26
             Console.WriteLine("Primljena poruka: " + s);
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Modify")]
         public void ModifyEntry(DataBaseEntry entry)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = Formatter.ParseName(principal.Identity.Name);
 
-            if (Thread.CurrentPrincipal.IsInRole("Write"))
-            {
+            
                 if (File.Exists(databasePath))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
@@ -330,7 +324,7 @@ namespace Zadatak26
                 {
                     Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
                 }
-            }
+            
         }
 
         public List<DataBaseEntry> PullDatabase()
