@@ -1,0 +1,9 @@
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\bin\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\bin\Debug\SecurityManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.CopyComplete
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.pdb

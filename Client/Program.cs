@@ -1,5 +1,5 @@
 ﻿using Common;
-using Manager;
+using SecurityManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Client
             Console.WriteLine("Korisnik koji je pokrenuo klijenta je: " + WindowsIdentity.GetCurrent().Name);
 
             string str;
-            DataBaseEntry entry;
+            DatabaseEntry entry;
             double res;
 
             using (ClientProxy proxy = new ClientProxy(binding, new EndpointAddress(new Uri(address))))
@@ -118,7 +118,7 @@ namespace Client
             }
         }
 
-        private static DataBaseEntry InputEntry()
+        private static DatabaseEntry InputEntry()
         {
             double[] consumption = new double[12];
             Console.WriteLine();
@@ -160,7 +160,7 @@ namespace Client
             Console.Write("Dec: ");
             consumption[11] = double.Parse(Console.ReadLine());
 
-            return new DataBaseEntry(1, region, city, year, consumption);
+            return new DatabaseEntry(1, region, city, year, consumption);
         }
     }
 }

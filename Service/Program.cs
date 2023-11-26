@@ -1,6 +1,4 @@
-﻿using CertificateManager;
-using Common;
-using Manager;
+﻿using Common;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Policy;
@@ -12,6 +10,8 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
+using CertificateManager;
+using SecurityManager;
 
 namespace Zadatak26
 {

@@ -82,3 +82,17 @@ C:\Users\Lenovo\Desktop\oibisss\OIBIS-projekat\BackupService\obj\Debug\BackupSer
 C:\Users\Lenovo\Desktop\oibisss\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CopyComplete
 C:\Users\Lenovo\Desktop\oibisss\OIBIS-projekat\BackupService\obj\Debug\BackupService.exe
 C:\Users\Lenovo\Desktop\oibisss\OIBIS-projekat\BackupService\obj\Debug\BackupService.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\BackupService.exe.config
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\BackupService.exe
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\BackupService.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\Common.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\Common.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\obj\Debug\BackupService.csproj.CopyComplete
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\obj\Debug\BackupService.exe
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\obj\Debug\BackupService.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\CertificateManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\CertificateManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\BackupService\bin\Debug\SecurityManager.pdb

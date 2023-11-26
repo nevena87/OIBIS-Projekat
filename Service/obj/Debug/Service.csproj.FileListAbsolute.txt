@@ -80,3 +80,17 @@ C:\Users\Nevena\OneDrive\Radna površina\OIBIS-projekat\OIBIS-projekat\Service\o
 C:\Users\Nevena\OneDrive\Radna površina\OIBIS-projekat\OIBIS-projekat\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\Nevena\OneDrive\Radna površina\OIBIS-projekat\OIBIS-projekat\Service\obj\Debug\Zadatak26.exe
 C:\Users\Nevena\OneDrive\Radna površina\OIBIS-projekat\OIBIS-projekat\Service\obj\Debug\Zadatak26.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe.config
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\Zadatak26.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\Common.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\Common.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\obj\Debug\Zadatak26.exe
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\obj\Debug\Zadatak26.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\CertificateManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\CertificateManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\SecurityManager.pdb

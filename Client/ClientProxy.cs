@@ -53,7 +53,7 @@ namespace Client
             }
         }
 
-        public void AddEntry(DataBaseEntry entry)
+        public void AddEntry(DatabaseEntry entry)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Client
             }
         }
 
-        public void ModifyEntry(DataBaseEntry entry)
+        public void ModifyEntry(DatabaseEntry entry)
         {
             try
             {
@@ -105,9 +105,9 @@ namespace Client
             return res;
         }
 
-        public DataBaseEntry HighestRegionConsumer(string region)
+        public DatabaseEntry HighestRegionConsumer(string region)
         {
-            DataBaseEntry res = null;
+            DatabaseEntry res = null;
             try
             {
                 res = factory.HighestRegionConsumer(region);
@@ -117,19 +117,6 @@ namespace Client
                 Console.WriteLine("Error: {0}", e.Message);
             }
             return res;
-        }
-
-        public void Ispisi(string s)
-        {
-            try
-            {
-                //za ispis
-                factory.Ispisi(s);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: {0}", e.Message);
-            }
         }
     }
 }

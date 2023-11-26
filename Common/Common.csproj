@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseEntry.cs" />
+    <Compile Include="DatabaseEntry.cs" />
     <Compile Include="IBackupService.cs" />
     <Compile Include="IDataBaseManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

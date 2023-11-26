@@ -53,13 +53,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CertificateManager\CertificateManager.csproj">
+      <Project>{FD926FB9-14B0-4C67-802A-16C787C4DF7E}</Project>
+      <Name>CertificateManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{B402EF10-B00D-431A-9D94-93A52CD2171D}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Manager\Manager.csproj">
-      <Project>{438E86C5-D767-4E28-A05A-474613B4F498}</Project>
-      <Name>Manager</Name>
+    <ProjectReference Include="..\SecurityManager\SecurityManager.csproj">
+      <Project>{8FE8A86C-953B-442B-A44B-24714B46DA12}</Project>
+      <Name>SecurityManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

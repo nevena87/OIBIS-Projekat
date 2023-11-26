@@ -11,23 +11,20 @@ namespace Common
     public interface IDataBaseManagement
     {
         [OperationContract]
-        void Ispisi(string s);
-
-        [OperationContract]
         void CreateDatabase();
         [OperationContract]
         void ArchiveDatabase();
         [OperationContract]
         void DeleteDatabase();
         [OperationContract]
-        void AddEntry(DataBaseEntry entry);
+        void AddEntry(DatabaseEntry entry);
         [OperationContract]
-        void ModifyEntry(DataBaseEntry entry);
+        void ModifyEntry(DatabaseEntry entry);
         [OperationContract]
         double AvgCityConsumption(string city);
         [OperationContract]
         double AvgRegionConsumption(string region);
         [OperationContract]
-        DataBaseEntry HighestRegionConsumer(string region);
+        DatabaseEntry HighestRegionConsumer(string region);
     }
 }

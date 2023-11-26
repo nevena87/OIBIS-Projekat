@@ -1,4 +1,4 @@
-﻿using CertificateManager;
+﻿using SecurityManager;
 using Common;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using CertificateManager;
 
 namespace BackupService
 {
@@ -17,7 +18,7 @@ namespace BackupService
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "wcfservice";
+            string srvCertCN = "Nevena";
 
             NetTcpBinding binding = new NetTcpBinding();
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
@@ -28,7 +29,7 @@ namespace BackupService
 
             using (Backup proxy = new Backup(binding, address))
             {
-                List<DataBaseEntry> entryList = new List<DataBaseEntry>();
+                List<DatabaseEntry> entryList = new List<DatabaseEntry>();
                 while (true)
                 {
                     Thread.Sleep(30000);
@@ -38,10 +39,10 @@ namespace BackupService
             }
         }
 
-        private static void SaveDatabase(List<DataBaseEntry> entryList)
+        private static void SaveDatabase(List<DatabaseEntry> entryList)
         {
             string databasePath = @"..\..\BackupDatabase.xml";
-            XmlSerializer serializer = new XmlSerializer(typeof(List<DataBaseEntry>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
 
             using (var stream = File.Create(databasePath))
             {

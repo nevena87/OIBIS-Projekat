@@ -1,14 +1,11 @@
-﻿using CertificateManager;
+﻿using SecurityManager;
 using Common;
-using Manager;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using CertificateManager;
 
 namespace BackupService
 {
@@ -29,9 +26,9 @@ namespace BackupService
             factory = this.CreateChannel();
         }
 
-        public List<DataBaseEntry> PullDatabase()
+        public List<DatabaseEntry> PullDatabase()
         {
-            List<DataBaseEntry> entryList = null;
+            List<DatabaseEntry> entryList = null;
             try
             {
                 entryList = factory.PullDatabase();

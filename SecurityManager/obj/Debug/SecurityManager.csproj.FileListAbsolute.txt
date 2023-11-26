@@ -1,0 +1,8 @@
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.pdb
