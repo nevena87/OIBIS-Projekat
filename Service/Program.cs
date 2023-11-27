@@ -34,9 +34,6 @@ namespace Zadatak26
             ServiceHost hostClient = new ServiceHost(typeof(DataBaseService));
             hostClient.AddServiceEndpoint(typeof(IDataBaseManagement), bindingClient, addressClient);
 
-            //Defining CustomAuthorizationManager as the preffered one.
-            hostClient.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
-
             //Defining our principal settings.
             hostClient.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
             List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>();
