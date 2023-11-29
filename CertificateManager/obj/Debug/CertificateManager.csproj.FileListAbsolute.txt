@@ -16,3 +16,12 @@ C:\Users\Lenovo\Desktop\oibisPROJ\OIBIS-projekat\CertificateManager\obj\Debug\Ce
 C:\Users\Lenovo\Desktop\oibisPROJ\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.CopyComplete
 C:\Users\Lenovo\Desktop\oibisPROJ\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.dll
 C:\Users\Lenovo\Desktop\oibisPROJ\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\bin\Debug\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\bin\Debug\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\CertificateManager\obj\Debug\CertificateManager.pdb

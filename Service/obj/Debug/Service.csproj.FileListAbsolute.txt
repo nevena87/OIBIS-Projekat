@@ -94,3 +94,17 @@ C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\SecurityManager.dll
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\CertificateManager.pdb
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Service\bin\Debug\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe.config
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\Zadatak26.exe
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\Zadatak26.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\CertificateManager.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\Common.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\CertificateManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\Common.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\bin\Debug\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\obj\Debug\Zadatak26.exe
+C:\Users\Lenovo\Desktop\oibis\OIBIS-projekat\Service\obj\Debug\Zadatak26.pdb

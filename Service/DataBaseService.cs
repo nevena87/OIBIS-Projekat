@@ -64,6 +64,7 @@ namespace Zadatak26
                         }
                         catch (Exception e)
                         {
+                            Console.WriteLine($"Error: {e.Message}");
                         }
                     }
                     using (var stream = File.Create(archivedDatabasePath))
@@ -119,6 +120,7 @@ namespace Zadatak26
                         }
                         catch (Exception e)
                         {
+                            Console.WriteLine($"Error: {e.Message}");
                         }
                     }
                     entry.Id = entryList.Count;
@@ -157,6 +159,7 @@ namespace Zadatak26
                         }
                         catch (Exception e)
                         {
+                            Console.WriteLine($"Error: {e.Message}");
                         }
                     }
                     foreach (DatabaseEntry existingEntry in entryList)
@@ -214,6 +217,7 @@ namespace Zadatak26
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine($"Error: {e.Message}");
                     }
                 }
                 double res = 0;
@@ -257,6 +261,7 @@ namespace Zadatak26
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine($"Error: {e.Message}");
                     }
                 }
                 double res = 0;
@@ -301,6 +306,7 @@ namespace Zadatak26
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine($"Error: {e.Message}");
                     }
                 }
                 double max = 0;
@@ -337,6 +343,7 @@ namespace Zadatak26
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
             return entryList;
