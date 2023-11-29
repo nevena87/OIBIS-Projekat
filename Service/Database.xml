@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfDatabaseEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DatabaseEntry>
+    <Id>0</Id>
+    <Region>Vojvodina</Region>
+    <City>Novi Sad</City>
+    <Year>2023</Year>
+    <Consumption>
+      <double>12</double>
+      <double>123</double>
+      <double>23</double>
+      <double>34</double>
+      <double>45</double>
+      <double>56</double>
+      <double>67</double>
+      <double>59</double>
+      <double>10</double>
+      <double>21</double>
+      <double>23</double>
+      <double>45</double>
+    </Consumption>
+  </DatabaseEntry>
+</ArrayOfDatabaseEntry>
