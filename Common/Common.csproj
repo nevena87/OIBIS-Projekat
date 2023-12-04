@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="DatabaseEntry.cs" />
     <Compile Include="IBackupService.cs" />
-    <Compile Include="IDataBaseManagement.cs" />
+    <Compile Include="IDatabaseManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

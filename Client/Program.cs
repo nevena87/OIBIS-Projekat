@@ -15,16 +15,16 @@ namespace Client
         static void Main(string[] args)
         {
             string name = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
-            Console.WriteLine(name);
+            //Console.WriteLine(name);
 
             NetTcpBinding binding = new NetTcpBinding();
-            string address = "net.tcp://localhost:4001/DataBaseService";
+            string address = "net.tcp://localhost:4001/DatabaseService";
 
             binding.Security.Mode = SecurityMode.Transport;
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-            Console.WriteLine("Korisnik koji je pokrenuo klijenta je: " + WindowsIdentity.GetCurrent().Name);
+            Console.WriteLine("Korisnik koji je pokrenuo klijenta je: " + name);
 
             string str;
             DatabaseEntry entry;
@@ -135,29 +135,29 @@ namespace Client
             string year = Console.ReadLine();
 
             Console.WriteLine("Consumption for each month:");
-            Console.Write("Jan: ");
+            Console.Write("January: ");
             consumption[0] = double.Parse(Console.ReadLine());
-            Console.Write("Feb: ");
+            Console.Write("February: ");
             consumption[1] = double.Parse(Console.ReadLine());
-            Console.Write("Mar: ");
+            Console.Write("March: ");
             consumption[2] = double.Parse(Console.ReadLine());
-            Console.Write("Apr: ");
+            Console.Write("April: ");
             consumption[3] = double.Parse(Console.ReadLine());
             Console.Write("May: ");
             consumption[4] = double.Parse(Console.ReadLine());
-            Console.Write("Jun: ");
+            Console.Write("June: ");
             consumption[5] = double.Parse(Console.ReadLine());
-            Console.Write("Jul: ");
+            Console.Write("July: ");
             consumption[6] = double.Parse(Console.ReadLine());
-            Console.Write("Aug: ");
+            Console.Write("August: ");
             consumption[7] = double.Parse(Console.ReadLine());
-            Console.Write("Sep: ");
+            Console.Write("September: ");
             consumption[8] = double.Parse(Console.ReadLine());
-            Console.Write("Oct: ");
+            Console.Write("October: ");
             consumption[9] = double.Parse(Console.ReadLine());
-            Console.Write("Nov: ");
+            Console.Write("November: ");
             consumption[10] = double.Parse(Console.ReadLine());
-            Console.Write("Dec: ");
+            Console.Write("December: ");
             consumption[11] = double.Parse(Console.ReadLine());
 
             return new DatabaseEntry(1, region, city, year, consumption);

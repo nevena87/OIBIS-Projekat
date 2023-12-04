@@ -1,0 +1,8 @@
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\bin\Debug\AuditManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\bin\Debug\AuditManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.AuditEventFile.resources
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.csproj.GenerateResource.cache
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.csproj.CoreCompileInputs.cache
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\AuditManager\obj\Debug\AuditManager.csproj.AssemblyReference.cache

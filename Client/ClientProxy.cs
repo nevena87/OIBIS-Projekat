@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    public class ClientProxy : ChannelFactory<IDataBaseManagement>, IDataBaseManagement
+    public class ClientProxy : ChannelFactory<IDatabaseManagement>, IDatabaseManagement
     {
-        IDataBaseManagement factory;
+        IDatabaseManagement factory;
 
         public ClientProxy(NetTcpBinding binding, EndpointAddress address) : base(binding, address)
         {

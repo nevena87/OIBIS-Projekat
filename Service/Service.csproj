@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseService.cs" />
+    <Compile Include="DatabaseService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuditManager\AuditManager.csproj">
+      <Project>{56B830C8-485A-4142-B610-0D9A31169F47}</Project>
+      <Name>AuditManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CertificateManager\CertificateManager.csproj">
       <Project>{FD926FB9-14B0-4C67-802A-16C787C4DF7E}</Project>
       <Name>CertificateManager</Name>

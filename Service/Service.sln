@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertificateManager", "..\Ce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityManager", "..\SecurityManager\SecurityManager.csproj", "{8FE8A86C-953B-442B-A44B-24714B46DA12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditManager", "..\AuditManager\AuditManager.csproj", "{56B830C8-485A-4142-B610-0D9A31169F47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8FE8A86C-953B-442B-A44B-24714B46DA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FE8A86C-953B-442B-A44B-24714B46DA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FE8A86C-953B-442B-A44B-24714B46DA12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B830C8-485A-4142-B610-0D9A31169F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B830C8-485A-4142-B610-0D9A31169F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B830C8-485A-4142-B610-0D9A31169F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B830C8-485A-4142-B610-0D9A31169F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

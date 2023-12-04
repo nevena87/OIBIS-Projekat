@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Common
 {
     [ServiceContract]
-    public interface IDataBaseManagement
+    public interface IDatabaseManagement
     {
         [OperationContract]
         void CreateDatabase();

@@ -48,9 +48,7 @@ C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Client.exe
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Client.pdb
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Common.dll
-C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Manager.dll
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Common.pdb
-C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\bin\Debug\Manager.pdb
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\obj\Debug\Client.csproj.AssemblyReference.cache
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\Users\Nevena\OneDrive\Radna površina\oib-projekat\OIBIS-projekat\Client\obj\Debug\Client.csproj.CopyComplete
@@ -104,3 +102,5 @@ C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Client\obj\D
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Client\obj\Debug\Client.pdb
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Client\bin\Debug\SecurityManager.dll
 C:\Users\Nevena\OneDrive\Radna površina\projekatOIB\OIBIS-projekat\Client\bin\Debug\SecurityManager.pdb
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\Client\bin\Debug\SecurityManager.dll
+C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\Client\bin\Debug\SecurityManager.pdb

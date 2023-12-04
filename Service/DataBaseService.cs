@@ -9,10 +9,13 @@ using System.Xml.Serialization;
 using SecurityManager;
 using System.Threading;
 using System.Security.Permissions;
+using AuditManager;
+using System.ServiceModel;
+using System.Security.Principal;
 
 namespace Zadatak26
 {
-    public class DataBaseService : IDataBaseManagement, IBackupService
+    public class DatabaseService : IDatabaseManagement, IBackupService
     {
         private string databasePath = @"..\..\Database.xml";
 
@@ -23,16 +26,56 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Administrate"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 if (!File.Exists(databasePath))
                 {
                     using (var stream = File.Create(databasePath))
                     {
                         Console.WriteLine("Database created.");
+
+                        try
+                        {
+                            Audit.CreateDatabaseSuccess();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                 }
                 else
                 {
                     Console.WriteLine("Failed to create a Database. Database already exists.");
+
+                    try
+                    {
+                        Audit.CreateDatabaseFailed();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action, "CreateDatabase method need Administrate permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -44,6 +87,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Administrate"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 if (File.Exists(databasePath))
                 {
                     string path = @"..\..\ArchivedDatabases";
@@ -72,11 +125,41 @@ namespace Zadatak26
                         serializer.Serialize(stream, entryList);
                         File.Delete(databasePath);
                         Console.WriteLine("Database archived.");
+
+                        try
+                        {
+                            Audit.ArchiveDatabaseSuccess();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                 }
                 else
                 {
                     Console.WriteLine("Cannot archive the Database. Database doesn't exist.");
+
+                    try
+                    {
+                        Audit.ArchiveDatabaseFailed();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "ArchiveDatabase method need Administrate permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -88,14 +171,54 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Administrate"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 if (File.Exists(databasePath))
                 {
                     File.Delete(databasePath);
                     Console.WriteLine("Database deleted.");
+
+                    try
+                    {
+                        Audit.DeleteDatabaseSuccess();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Cannot delete the Database. It doesn't exist!");
+
+                    try
+                    {
+                        Audit.DeleteDatabaseFailed();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "DeleteDatabase method need Administrate permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -107,6 +230,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Write"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 if (File.Exists(databasePath))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
@@ -129,11 +262,41 @@ namespace Zadatak26
                     {
                         serializer.Serialize(stream, entryList);
                         Console.WriteLine("Entry added to database");
+
+                        try
+                        {
+                            Audit.AddEntrySuccess();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                 }
                 else
                 {
                     Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
+
+                    try
+                    {
+                        Audit.AddEntryFailed();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "AddEntry method need Write permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -145,6 +308,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Write"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 if (File.Exists(databasePath))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
@@ -185,16 +358,55 @@ namespace Zadatak26
                         {
                             serializer.Serialize(stream, entryList);
                             Console.WriteLine("Entry modified.");
+
+                            try
+                            {
+                                Audit.ModifyEntrySuccess();
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
+                            }
                         }
                     }
                     else
                     {
                         Console.WriteLine("Cannot modify Entry. Database doesn't contain given Entry.");
+
+                        try
+                        {
+                            Audit.ModifyEntryFailed();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                 }
                 else
                 {
                     Console.WriteLine("Cannot add Entry to the Database. Database doesn't exist.");
+
+                    try
+                    {
+                        Audit.ModifyEntryFailed();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "ModifyEntry method need Write permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -206,6 +418,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Read"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
                 List<DatabaseEntry> entryList = new List<DatabaseEntry>();
 
@@ -239,6 +461,15 @@ namespace Zadatak26
             }
             else
             {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "AvgCityConsumption method need Read permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 return -1;
             }
         }
@@ -250,6 +481,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Read"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
                 List<DatabaseEntry> entryList = new List<DatabaseEntry>();
 
@@ -283,6 +524,15 @@ namespace Zadatak26
             }
             else
             {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "AvgRegionConsumption method need Read permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 return -1;
             }
         }
@@ -294,6 +544,16 @@ namespace Zadatak26
 
             if (Thread.CurrentPrincipal.IsInRole("Read"))
             {
+                try
+                {
+                    Audit.AuthorizationSuccess(userName,
+                        OperationContext.Current.IncomingMessageHeaders.Action);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
                 List<DatabaseEntry> entryList = new List<DatabaseEntry>();
                 DatabaseEntry highestConsumer = null;
@@ -326,6 +586,16 @@ namespace Zadatak26
             }
             else
             {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(WindowsIdentity.GetCurrent().Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "HighestRegionConsumer method need Read permission.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
                 return null;
             }
         }
