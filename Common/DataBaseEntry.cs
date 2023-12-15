@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Common
 {
@@ -36,27 +37,7 @@ namespace Common
         public string Year { get => year; set => year = value; }
         public double[] Consumption { get => consumption; set => consumption = value; }
 
-        /*public override bool Equals(object obj)
-        {
-            var entry = obj as DatabaseEntry;
-            return entry != null &&
-                   Id == entry.Id &&
-                   Region == entry.Region &&
-                   City == entry.City &&
-                   Year == entry.Year &&
-                   EqualityComparer<double[]>.Default.Equals(Consumption, entry.Consumption);
-        }
-        
-        public override int GetHashCode()
-        {
-            var hashCode = 429245927;
-            hashCode = hashCode * -1521134295 + Id.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Region);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(City);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Year);
-            hashCode = hashCode * -1521134295 + EqualityComparer<double[]>.Default.GetHashCode(Consumption);
-            return hashCode;
-        }*/
+    
 
         public double GetYearlyConsumption()
         {
@@ -67,5 +48,14 @@ namespace Common
             }
             return sum;
         }
+
+       
+     
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Region: {Region}, City: {City}, Year: {Year}, Consumption: [{string.Join(", ", Consumption)}]";
+        }
+
     }
 }

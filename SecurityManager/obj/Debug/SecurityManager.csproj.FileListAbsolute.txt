@@ -14,3 +14,11 @@ C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\SecurityMan
 C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\Nevena\OneDrive\Radna površina\OIB-Projekat\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Lenovo\Desktop\oiiibiiiisss\OIBIS-projekat\SecurityManager\obj\Debug\SecurityManager.pdb

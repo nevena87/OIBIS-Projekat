@@ -11,6 +11,6 @@ namespace Common
     public interface IBackupService
     {
         [OperationContract]
-        List<DatabaseEntry> PullDatabase();
+        (List<byte[]>, byte[], byte[]) PullDatabase();
     }
 }

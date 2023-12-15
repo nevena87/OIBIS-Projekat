@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AES.cs" />
     <Compile Include="DatabaseEntry.cs" />
     <Compile Include="IBackupService.cs" />
     <Compile Include="IDatabaseManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecretMasks.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

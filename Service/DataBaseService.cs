@@ -12,12 +12,16 @@ using System.Security.Permissions;
 using AuditManager;
 using System.ServiceModel;
 using System.Security.Principal;
+using System.Security.Cryptography;
 
 namespace Zadatak26
 {
     public class DatabaseService : IDatabaseManagement, IBackupService
     {
         private string databasePath = @"..\..\Database.xml";
+        public readonly Aes myAes = Aes.Create();
+        public AES aes = new AES();
+        public SecretMasks sm = new SecretMasks();
 
         public void CreateDatabase()
         {
@@ -600,23 +604,37 @@ namespace Zadatak26
             }
         }
 
-        public List<DatabaseEntry> PullDatabase()
+        public (List<byte[]>, byte[], byte[]) PullDatabase()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<DatabaseEntry>));
             List<DatabaseEntry> entryList = new List<DatabaseEntry>();
+
+            List<byte[]> encryptedList = new List<byte[]>();
+            byte[] yourKey = null;
+            byte[] yourIV = null;
 
             using (FileStream stream = File.OpenRead(databasePath))
             {
                 try
                 {
                     entryList = (List<DatabaseEntry>)serializer.Deserialize(stream);
+
+                    foreach (var item in entryList)
+                    {
+                        byte[] encryptedData = aes.EncryptStringToBytes_Aes(item.ToString(), myAes.Key, myAes.IV);
+                        encryptedList.Add(encryptedData);
+                    }
+
+                    (byte[], byte[]) results = sm.KeyAndIVEncryption(myAes.Key, myAes.IV);
+                    yourKey = results.Item1;
+                    yourIV = results.Item2;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"Error: {e.Message}");
                 }
             }
-            return entryList;
+            return (encryptedList, yourKey, yourIV);
         }
     }
 }

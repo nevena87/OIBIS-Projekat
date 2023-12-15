@@ -26,9 +26,9 @@ namespace BackupService
             factory = this.CreateChannel();
         }
 
-        public List<DatabaseEntry> PullDatabase()
+        public (List<byte[]>, byte[], byte[]) PullDatabase()
         {
-            List<DatabaseEntry> entryList = null;
+            (List<byte[]>, byte[], byte[]) entryList = (new List<byte[]>(), null, null);
             try
             {
                 entryList = factory.PullDatabase();
