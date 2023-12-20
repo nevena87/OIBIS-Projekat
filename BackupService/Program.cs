@@ -48,46 +48,34 @@ namespace BackupService
 
                     DatabaseEntry entryPOM = new DatabaseEntry();
 
-                    // Dekripotavnje podataka
-                    try
-                    {
-                        foreach (var item in templList)
-                        {
-                            string decryptedString = aes.DecryptBytesToString_Aes(item, decryptedyourKey, decrypteyourIV);
-
-
-                            string[] pom = decryptedString.Split(' ');
-
-
-                            entryPOM.Id = int.Parse(pom[0]);
-                            entryPOM.Region = pom[1];
-                            entryPOM.City = pom[2];
-                            entryPOM.Year = pom[3];
-                            entryPOM.Consumption = new double[]
-                                     {
-                                    ParseDouble(pom, 4),
-                                    ParseDouble(pom, 5),
-                                    ParseDouble(pom, 6),
-                                    ParseDouble(pom, 7),
-                                    ParseDouble(pom, 8),
-                                    ParseDouble(pom, 9),
-                                    ParseDouble(pom, 10),
-                                    ParseDouble(pom, 11),
-                                    ParseDouble(pom, 12),
-                                    ParseDouble(pom, 13),
-                                    ParseDouble(pom, 14),
-                                    ParseDouble(pom, 15)
-                                     };
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-
-
                     List<DatabaseEntry> listOfEntities = new List<DatabaseEntry>();
-                    listOfEntities.Add(entryPOM);
+
+                    // Dekripotavnje podataka
+                   
+                    string decryptedString = "";
+
+
+                    foreach (var item in templList)
+                    {
+
+                        decryptedString += aes.DecryptBytesToString_Aes(item, decryptedyourKey, decrypteyourIV);
+                        decryptedString += ",";
+
+
+                    }
+                    string[] parts = decryptedString.Split(',');
+
+                    foreach (var p in parts)
+                    {
+                        if (p.Length != 0)
+                        {
+                            //Console.Write(p);
+                            listOfEntities.Add(CreateFromString(p));
+                            //Console.ReadLine();
+                        }
+
+                    }
+
 
                     SaveDatabase(listOfEntities);
                 }
@@ -141,8 +129,43 @@ namespace BackupService
             }
         }
 
+        public static DatabaseEntry CreateFromString(string input)
+        {
+
+            input = input.Replace("Id: ", "").Replace("Region: ", "").Replace("City: ", "").Replace("Year: ", "").Replace("Consumption: [", "");
+
+
+            string[] parts = input.Split(new[] { ' ', ']' }, StringSplitOptions.RemoveEmptyEntries);
+
+
+            if (parts.Length < 13)
+            {
+                throw new ArgumentException("Invalid input format");
+            }
+
+            DatabaseEntry newData = new DatabaseEntry
+            {
+                Id = int.Parse(parts[0]),
+                Region = parts[1].Trim(),
+                City = parts[2].Trim(),
+                Year = parts[3],
+                Consumption = new double[12]
+            };
+
+            for (int i = 0; i < 12; i++)
+            {
+                newData.Consumption[i] = double.Parse(parts[i + 4]);
+            }
+
+
+
+            return newData;
+        }
+
 
 
 
     }
 }
+
+
